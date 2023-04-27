@@ -1,0 +1,87 @@
+:root {
+    --bg-color: #fff;
+    --bg-color2: #262626;
+    --font-color: #2E3034;
+    --font-color2: #DDDEE1;
+    --font-family: "Lucida Bright";
+}
+
+.dark-mode {
+    --bg-color: #262626;
+    --font-color: #DDDEE1;
+    --font-family: "Lucida Bright";
+}
+
+/* fonts */
+
+h1{
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size:36px;
+    font-weight:600;
+    margin:0;
+    height:auto;
+}
+
+nav{
+    height:90px;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0px 40px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin:0;
+    text-align: center;
+    margin: 0 25px;
+}
+
+nav ul li{
+    position:relative;
+    display:inline-block;
+    font-family: 'Lucida Bright';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--font-color);
+    /* margin-bottom: 5px; */
+    cursor:pointer;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 25px; /* Adds spacing (margin) between list items, except for the last item */
+}
+
+#logo{
+    content: "VITALITY";
+}
+
+#mobile-menu{
+    display:none;
+}
+
+#logo-menu{
+    display:flex;
+}
+@media screen and (max-width:1100px) {
+    #logo{
+        content: "V";
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    #main{
+        display:none;
+    }
+    #mobile-menu{
+        display:inline-block;
+    }
+}
+
+
