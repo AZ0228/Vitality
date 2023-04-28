@@ -18,40 +18,58 @@
 .hover:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-} 
-
-
+}
 
 #join {
-    /* margin-right: 30px; */
-    background-color: var(--bg-color2);
-    color: var(--font-color2);
-    padding: 7px 17px;
-    border: 3px solid var(--bg-color2);
-    transition: all 0.5s ease-out;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #262626;
+    font-family: "Lucida Bright";
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    border: none;
+    font-size: 20px;
 }
 
-#join::before {
-    content: "";
+#join:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #FFF;
     position: absolute;
-    top: 0;
-    left: -100%;
-    bottom: 0;
-    width: 100%;
-    background-image: linear-gradient(to right, var(--bg-color2), var(--bg-color));
-    transition: all 0.5s ease-out;
-    z-index: -1;
+    transition: all 0.4s ease-in-out;
+    right: 0;
 }
 
-#join:hover::before {
+#join:hover::after {
+    right: auto;
     left: 0;
+    width: 100%;
 }
 
-#join:hover {
-    color: var(--bg-color2);
+#join span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
 }
+
+#join:hover span {
+    color: #2E3034;
+}
+
+#join span:active{
+    transform: scale(0.8);
+}
+
+
 
 .burger {
     margin-top:8.5px;
@@ -62,6 +80,7 @@
     background: transparent;
     cursor: pointer;
     display:none;
+    z-index: 100;
 }
 
 .burger input {
@@ -119,4 +138,33 @@
   transform: rotate(-45deg);
   top: 20px;
   left: 5px;
+}
+
+#side-menu{
+    position: fixed;
+    /* left: -100%; */
+    transform: translateX(-500px);
+    height: 100%;
+    width:300px;
+    left:0;
+    top:0;
+    transition: transform 0.3s ease-in-out;
+    background-color: #FFF;
+    z-index: 99;
+}
+
+#side-menu ul{
+    list-style:none;
+    margin-top:100px;
+}
+
+#side-menu ul li{
+    text-decoration: none;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+#side-menu ul li a{
+    color: var(--font-color);
 }
